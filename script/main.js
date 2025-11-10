@@ -113,27 +113,33 @@ const animationTimeline = () => {
             y: -150
         },
     "+=1")
-    .from(".idea-1", 0.7, ideaTextTrans)
+
+    // >>> Bagian perbaikan posisi Y di div.five <<<
+    .from(".idea-1", 0.7, { ...ideaTextTrans, y: 0 }) 
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
-    .from(".idea-2", 0.7, ideaTextTrans)
+    
+    .from(".idea-2", 0.7, { ...ideaTextTrans, y: 50 })
     .to(".idea-2", 0.7, ideaTextTransLeave, "+=2.5")
-    .from(".idea-3", 0.7, ideaTextTrans)
+    
+    .from(".idea-3", 0.7, { ...ideaTextTrans, y: 100 })
     .to(".idea-3 strong", 0.5, {
         scale: 1.2,
-        x: 10,
+        x: 0,
         backgroundColor: "rgb(21, 161, 237)",
         color: "#fff",
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=2.5")
-    .from(".idea-4", 0.7, ideaTextTrans)
+    
+    .from(".idea-4", 0.7, { ...ideaTextTrans, y: 150 })
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=2.5")
+    
     .from(
         ".idea-5",
         0.7, {
             rotationX: 15,
             rotationZ: -10,
             skewY: "-5deg",
-            y: 50,
+            y: 200,
             z: 10,
             opacity: 0,
         },
@@ -155,6 +161,7 @@ const animationTimeline = () => {
         },
         "+=2"
     )
+    
     .staggerFrom(
         ".idea-6 span",
         0.8, {
@@ -162,6 +169,7 @@ const animationTimeline = () => {
             opacity: 0,
             rotation: 15,
             ease: Expo.easeOut,
+            y: 250,
         },
         0.2
     )
@@ -176,6 +184,8 @@ const animationTimeline = () => {
         0.2,
         "+=1.5"
     )
+    // <<< Akhir perbaikan posisi Y di div.five >>>
+
     .staggerFromTo(
         ".baloons img",
         2.5, {
@@ -209,7 +219,6 @@ const animationTimeline = () => {
         0.7, {
             opacity: 0,
             y: -50,
-            // scale: 0.3,
             rotation: 150,
             skewX: "30deg",
             ease: Elastic.easeOut.config(1, 0.5),

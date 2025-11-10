@@ -69,11 +69,14 @@ body {
   right: 5px;
 }
 
+/* Bagian .five untuk pemusatan JS */
 .five p {
   font-size: 2rem;
   left: 0;
-  position: absolute;
+  position: absolute; 
   right: 0;
+  text-align: center;
+  margin: 10px auto;
 }
 
 .idea-3 strong {
@@ -94,31 +97,35 @@ body {
   font-size: 15rem;
 }
 
-
+/* PERBAIKAN BUG FOTO DAN TOPI */
 .six {
   position: relative;
   top: 10vh;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .six img {
-  display: inline-block;
+  display: block;
   height: 350px;
   max-width: 100%;
-  /* height: auto; */
 }
 
 .six .hat {
-  left: 41.5%;
   position: absolute;
-  /* transform: scale(0.1); */
   top: -35%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-20deg);
   width: 80px;
 }
+/* AKHIR PERBAIKAN BUG FOTO DAN TOPI */
 
 .baloons img {
   display: inline-block;
   position: absolute;
+  max-width: 15vw;
 }
 
 .baloons img:nth-child(even) {
@@ -148,72 +155,34 @@ body {
   width: 25px;
   z-index: -1;
 }
+/* ... (aturan SVG tetap) ... */
+.eight svg:nth-child(1) { fill: #bd6ecf; left: 5vw; top: 7vh; }
+.eight svg:nth-child(2) { fill: #7dd175; left: 35vw; top: 23vh; }
+.eight svg:nth-child(3) { fill: #349d8b; left: 23vw; top: 33vh; }
+.eight svg:nth-child(4) { fill: #347a9d; left: 57vw; top: 43vh; }
+.eight svg:nth-child(5) { fill: #c66053; left: 7vw; top: 68vh; }
+.eight svg:nth-child(6) { fill: #bfaa40; left: 77vw; top: 42vh; }
+.eight svg:nth-child(7) { fill: #e3bae8; left: 83vw; top: 68vh; }
+.eight svg:nth-child(8) { fill: #8762cb; left: 37vw; top: 86vh; }
+.eight svg:nth-child(9) { fill: #9a90da; left: 87vw; top: 94vh; }
 
-.eight svg:nth-child(1) {
-  fill: #bd6ecf;
-  left: 5vw;
-  top: 7vh;
-}
-
-.eight svg:nth-child(2) {
-  fill: #7dd175;
-  left: 35vw;
-  top: 23vh;
-}
-
-.eight svg:nth-child(3) {
-  fill: #349d8b;
-  left: 23vw;
-  top: 33vh;
-}
-
-.eight svg:nth-child(4) {
-  fill: #347a9d;
-  left: 57vw;
-  top: 43vh;
-}
-
-.eight svg:nth-child(5) {
-  fill: #c66053;
-  left: 7vw;
-  top: 68vh;
-}
-
-.eight svg:nth-child(6) {
-  fill: #bfaa40;
-  left: 77vw;
-  top: 42vh;
-}
-
-.eight svg:nth-child(7) {
-  fill: #e3bae8;
-  left: 83vw;
-  top: 68vh;
-}
-
-.eight svg:nth-child(8) {
-  fill: #8762cb;
-  left: 37vw;
-  top: 86vh;
-}
-
-.eight svg:nth-child(9) {
-  fill: #9a90da;
-  left: 87vw;
-  top: 94vh;
-}
-
+/* PERBAIKAN JARAK UCAPAN */
 .wish-hbd {
   font-size: 3em;
-  margin: 0;
+  margin-top: 20px; /* Tambahkan sedikit margin atas setelah foto */
+  margin-bottom: 5px; /* Jarak antara h3 dan h5 */
   text-transform: uppercase;
+  line-height: 1.1; /* Renggangkan jarak antar baris */
 }
 
 .wish h5 {
-  font-size: 2rem;
+  font-size: 2rem; 
   font-weight: lighter;
-  margin: 10px 0 0;
+  margin-top: 5px;
+  margin-bottom: 20px; /* Tambahkan sedikit margin bawah sebelum elemen berikutnya */
+  line-height: 1.3; /* Renggangkan jarak antar baris doa */
 }
+/* AKHIR PERBAIKAN JARAK UCAPAN */
 
 .nine p {
   font-size: 2rem;
@@ -227,27 +196,19 @@ body {
 
 /* Media Queries */
 @media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
+  /* Hapus penyesuaian topi yang tidak perlu karena sudah diperbaiki dengan transform */
 }
 
 @media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
+  /* Hapus penyesuaian topi yang tidak perlu */
 }
 
 @media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
+  /* Hapus penyesuaian topi yang tidak perlu */
 }
 
 @media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
+  /* Hapus penyesuaian topi yang tidak perlu */
 }
 
 @media screen and (max-width: 500px) {
@@ -273,17 +234,24 @@ body {
   }
 
   .six .hat {
-    /* top: -20px; */
     width: 50px;
   }
-
+  
+  /* PENYESUAIAN JARAK UNTUK LAYAR KECIL */
   .wish-hbd {
     font-size: 2.2em;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    line-height: 1.2;
   }
 
   .wish h5 {
     font-size: 1.4rem;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    line-height: 1.4;
   }
+  /* AKHIR PENYESUAIAN JARAK UNTUK LAYAR KECIL */
 
   .nine p {
     font-size: 1.5rem;
